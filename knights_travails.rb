@@ -17,7 +17,8 @@ def valid_moves(pos) # Returns array of valid knight moves from given starting p
   valid_moves
 end
 
-def on_board?(pos) # Checks possible move is within board boundaries
+def on_board?(pos) # Checks possible move is valid and within board boundaries
+  return false if !pos.kind_of?(Array) || pos.length != 2
   pos[0].between?(0,7) && pos[1].between?(0,7) ? true : false
 end
 
